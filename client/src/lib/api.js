@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "https://exp8-lfi3.onrender.com/api";
+const rawApiUrl = import.meta.env.VITE_API_URL;
+const normalizedApiUrl = rawApiUrl ? rawApiUrl.replace(/\/+$/, "") : "https://exp8-lfi3.onrender.com/api";
+const API_BASE_URL = normalizedApiUrl.endsWith("/api") ? normalizedApiUrl : `${normalizedApiUrl}/api`;
 const TOKEN_KEY = "auth_token";
 
 export const api = axios.create({
