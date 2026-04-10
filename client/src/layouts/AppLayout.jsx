@@ -13,13 +13,18 @@ export const AppLayout = () => {
   return (
     <div className="app-shell">
       <header className="topbar">
-        <Link to="/" className="brand">
-          JWT Auth Demo
-        </Link>
+        <div className="brand-group">
+          <Link to="/" className="brand">
+            Auth Studio
+          </Link>
+          <p className="brand-tag">Secure routing with React + Express</p>
+        </div>
+
         <nav className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/dashboard">Dashboard</Link>
         </nav>
+
         <div className="topbar-right">
           {user ? <span className="badge">{user.email}</span> : null}
           {user ? (
@@ -33,9 +38,14 @@ export const AppLayout = () => {
           )}
         </div>
       </header>
+
       <main className="page-content">
         <Outlet />
       </main>
+
+      <footer className="site-footer">
+        <p>Built for auth demos and quick prototyping.</p>
+      </footer>
     </div>
   );
 };
