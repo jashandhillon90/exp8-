@@ -43,4 +43,4 @@ cd ../client
 npm run dev
 ```
 
-Frontend runs at `http://localhost:5173` and backend at `http://localhost:5000` by default.
+Frontend runs at `http://localhost:5173` and backend at `https://exp8-lfi3.onrender.com` by default.
