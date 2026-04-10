@@ -10,7 +10,12 @@ import { errorHandler, notFoundHandler } from "./middlewares/error.middleware.js
 const app = express();
 
 app.use(helmet());
-app.use(cors({ origin: env.clientOrigin }));
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use(morgan("dev"));
 app.use(express.json());
 
